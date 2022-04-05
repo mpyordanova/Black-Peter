@@ -1,0 +1,170 @@
+body{
+   
+    background-color: rgb(150, 199, 245);
+    font-family: 'Times New Roman', Times, serif;
+     font-size: 20px; 
+    text-align: justify; 
+}
+/* 5 REASONS */
+.grid{ 
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px;
+   align-items: stretch;
+   justify-items: center;
+   }
+ .grid-item{
+    border: 5px solid rgb(28, 112, 161);
+    font-size: 15px;
+    /* margin: 30px 60px;  */
+    padding: 20px 40px;
+    color: rgb(16, 85, 124);
+    border-radius: 15px;
+    /* text-align: justify; */
+    opacity: 0.5;
+    background-color: whitesmoke;
+    justify-content: center;
+ }
+ /* PIC AND VIDEO */
+ .grid-media-container{
+     display: inline-grid;
+     grid-template-columns: 50% 50%;
+     /* padding: 10px; */
+    grid-column: auto;
+    grid-row: auto;
+   justify-items: center;
+   justify-content: space-around;
+   overflow: hidden;
+   
+ }
+ .grid-media-item{
+    max-width: 100%;
+    height: auto;
+    display:block;
+    justify-content: center;
+    object-fit: cover;
+    align-items: center;
+ }
+ /* PARAGRAPH */
+ p{
+    margin: 7% 30%;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    min-width: 200px;
+  min-height: 200px;
+}
+
+p:hover{
+    background-color: whitesmoke;
+    opacity: 0.5;
+}
+
+*{
+    margin: 5%;
+  
+} 
+h2{
+    text-align: center; color: rgb(240, 13, 13);
+font-family: Prata
+} 
+h3{
+    text-align: center; color: rgb(16, 85, 124);margin: 50px;
+}
+h4{ 
+    text-align: left;
+} 
+.homebutton:hover .menu{
+    display: block;
+    background-color: blue;
+} 
+button:hover {
+    background-color: rgb(42, 47, 112);
+}
+.navbar{
+    display: none;
+}
+nav:hover .navbar{
+    display: block;
+    background-color: rgb(168, 214, 226);
+    margin-right: 60%;
+}
+#banner {
+    background-size: cover;
+    background-image: url(https://images.unsplash.com/photo-1490604001847-b712b0c2f967?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3353&q=80);
+    background-position: center;
+    height:25rem;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+  }
+  /* REVIEWS */
+.flex-container {
+    display: flex;
+    background-color: rgb(150, 199, 245);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0.5;
+ }
+ .flex-item {
+    background-color: #f1f1f1;
+    margin: 2em 1em;
+    padding: 20px;
+    font-size: 30px;
+    align-content: space-around;font-size: 20px;
+    align-items: stretch;
+    flex-wrap:wrap;  
+    border-style: double;
+    border-radius: 15px;
+    flex-direction: row;
+ }
+   /* TRAVEL FORM */
+   form{
+      background-color: whitesmoke;color:rgb(16, 85, 124);
+      padding: 2.25em 0.75em;
+      border-style: solid; 
+      width: 30%;
+      max-height: fit-content;
+      text-align:left;
+      bottom: 0.5em; 
+      border-radius: 15px;
+      overflow:auto;
+    
+}
+   input[type=submit]:hover{
+       border: solid;background-color: rgb(43, 121, 238);
+       border-radius: 10px;
+    }
+    footer{
+    /* text-align: center; */
+    font-size: x-small;
+    height: 50px;
+    max-width: 100%;
+    text-align: justify;
+        /* position: absolute;
+        bottom:0; */
+}
+img {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .video{
+    position: relative;
+    /* margin: auto; */
+    /* display: block; */
+    float: inline-start;
+    
+  }
+  /* @media only screen (min-width:320px;) and (max-width:480px){ */
+    
+      
+  }

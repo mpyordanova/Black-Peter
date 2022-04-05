@@ -1,0 +1,8 @@
+
+body{background-color: whitesmoke;}
+#div1{font-style: bold; border-color: grey;border-style: solid;}
+#div2{background-color: lightgrey;}
+*{font-style: italic;margin: 5px;padding: 2px;}
+
+#list{color: green;}
+.item{color: orange}

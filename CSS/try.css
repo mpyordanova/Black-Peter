@@ -1,0 +1,37 @@
+ .image { 
+        position: relative; 
+        width: 100%; /* for IE 6 */
+     }
+     
+ h2 { 
+        position: absolute; 
+        top: 200px; 
+        left: 0; 
+        width: 100%; 
+     }
+     #banner {
+      background-size: cover;
+      background-image: url(https://images.unsplash.com/photo-1490604001847-b712b0c2f967?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3353&q=80);
+      background-position: center;
+      height:20rem;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .grid{ 
+       display: inline-grid;
+       grid-template-columns: 50% 50%;
+       padding: 10px;
+      align-items: center;
+      justify-items: center;
+      }
+
+     .grid-item:{
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+      te
+     }
