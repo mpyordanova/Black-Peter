@@ -21,17 +21,18 @@
       text-align: center;
     }
     .grid{ 
-       display: inline-grid;
+       display: grid;
        grid-template-columns: 50% 50%;
+       grid-template-rows: auto auto;
        padding: 10px;
       align-items: center;
       justify-items: center;
+      border: 2px solid black;
       }
 
      .grid-item:{
-      border: 1px solid rgba(0, 0, 0, 0.8);
-      padding: 20px;
+       /* padding: 20px; */
       font-size: 30px;
       text-align: center;
-      te
+      border: 2px solid black;
      }
