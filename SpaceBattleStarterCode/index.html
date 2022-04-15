@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space War</title>
+    <!-- <style>canvas {box-shadow: navy 20px 10px 50px;
+     }</style> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Alient Invaders</h1>
+    <canvas id="game"></canvas>
+    
+    <div class="bodyContainer">
+
+        <div class="mainCharacterView left" >
+                <div class="nameBox">USS HelloWorld</div>
+                <div class="playerImage"></div>
+                <div class="playerStats">
+
+                Hull : 20 <br>
+                FirePower : 5 <br>
+                Accuracy : .7 <br>
+
+
+                </div>
+
+        </div>
+
+
+        <div class="mainCharacterView right">
+           
+            <div class="nameBox">Enemy Alpha</div>
+            <div class="enemyImage"></div>
+                <div class="enemyStats">
+                    Hull : 6 <br>
+                    FirePower : 3 <br>
+                    Accuracy : .6 <br>
+        
+                </div>
+            
+        </div>
+        <div class="mainCharacterView right">
+           
+            <div class="nameBox">Enemy Beta</div>
+            <div class="enemyImage"></div>
+                <div class="enemyStats">
+                    Hull : 3 <br>
+                    FirePower : 2 <br>
+                    Accuracy : .7 <br>
+    
+    
+                </div>
+            
+            
+        </div>
+        <div id="game">
+            <button id="play" class="play" onclick="play()">Play</button>
+            </div>
+
+
+
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
