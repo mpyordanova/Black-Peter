@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1>Alient Invaders</h1>
-    <canvas id="game"></canvas>
+    <!-- <canvas id="game"></canvas> -->
     
     <div class="bodyContainer">
 
@@ -45,25 +45,16 @@
                 </div>
             
         </div>
-        <div class="mainCharacterView right">
-           
-            <div class="nameBox">Enemy Beta</div>
-            <div class="enemyImage"></div>
-                <div class="enemyStats">
-                    Hull : 3 <br>
-                    FirePower : 2 <br>
-                    Accuracy : .7 <br>
-    
-    
-                </div>
-            
-            
-        </div>
+       
+     </div>
         <div id="game">
             <button id="play" class="play" onclick="play()">Play</button>
             </div>
-
-
+          <div id="Hull">
+                <h2 id="USS HelloWorld-Hull"></h2>
+                <h2 id="Enemy-Hull"></h2>
+         </div>
+         <div id="winner"></div>
 
     <script type="text/javascript" src="app.js"></script>
 </body>

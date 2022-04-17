@@ -1,127 +1,133 @@
-let spaceShip;
-let enemyShip;
-// create my ship class
-class SpaceShipProperty
-{
-    constructor (hull, firepower, accuracy)
-    {
-        this.hull = 20;
-        this.firepower = 5; 
-        this.accuracy = .7;
-        this.alive = true;
 
-        attack(target) 
-        {
-            if(this.accuracy > target.accuracy)
-            
-        {
-            console.log("You hit enemy's ship. Good job guys!")
-            target.hull = target.hull - this.firepower;
-            console.log("Enemy has ${target.hull} hull remaining. For now...")
-        }
-            if(target.hull <=0)
-            {
-                target.alive = false;
-                console.log("Another one bites the dust! Lets get this party started! Who wants a beer?")
-            }
-        
-        else { console.log("Dodged the attack")
-            }
-        }
-    };
+const ranNum = (min, max) => 
+{
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random () * (max - min +1)) + min;
 }
-    
-    
- 
-    
-// create alien ship class
-    class enemyShipProperty
-    {
-        constructor (hull, firepower, accuracy)
+
+// Create our space ship class
+   class SpaceShip
+   {
+        constructor (name, hull, firepower, accuracy,)
         {
-            this.hull = Math.floor(Math.random()* (6 - 3))+ 3;
-            this.firepower = Math.floor(Math.random() *2) +2;
-            this.accuracy = (Math.random () * (0.8 - 0.6)) + 0.6;
-            this.alive = true;
+          this.name =name,
+          this.hull = 20;
+          this.firepower = 5; 
+          this.accuracy = .7
         }
-             attack(target) 
-             {
-                if(this.accuracy > target.accuracy)
+        // Attack method by the player
+            attack(target) 
+           {
+               console.log("Attacking the enemy...",);
+               {
+                 let hitChance = ranNum (1, 10) /10;
+                 if (hitChance < this.accuracy)
+                   {
+                     target.hull -= this.firepower;
+                     console.log("You hit the enemy!",);
+                   } else 
+                   {
+                       console.log("You missed the target!",);
+                   }
+               }
+               console.log("Enemy hull:" + target.hull,);
+            }   
+
+            // Chance to retreat
+                  retreat() 
                 {
-                    console.log("Oh, no. Your ship has been hit!")
-                    target.hull = target.hull - this.firepower;
-                    console.log("You have ${target.hull} hull remaining.")
-                    if(target.hull <=0)
-                    {
-                        target.alive = false;
-                        console.log("Looser. You lost the battle. Enemy won.")
-                    }
+                    alert("Retreat and create new strategy to kill the enemy")
                 }
-                else {console.log("Dodged the attack")
-            }
-        };
-    }
+    };
 
-function spaceCombat(enemyShip, spaceShip)
-{
-    while (spaceShip.alive && enemyShip.alive)
+    // Define player object
+    let myShip = new SpaceShip ("USS HelloWorld");
+
+     
+
+    // create alien ship class
+   class EnemyShip
     {
-        spaceship.attack(enemyShip);
-        if(enemyShip.alive)
+        constructor (name, hull, firepower, accuracy)
         {
-            enemyShip.attack(spaceShip)
+            this.name = name;
+            this.hull = ranNum (3, 6);
+            this.firepower = ranNum (2, 4),
+            this.accuracy = ranNum (6, 8) / 10     
         }
-        
+              enemyAttack(target) 
+            {
+                     console.log("Enemy attacks...",);
+                {
+                     let hitChance = ranNum(1, 10) /10;
+                     if(hitChance < this.accuracy)
+                     {
+                         target.hull -= this.firepower;
+                         console.log("You have been hit",);
+                     }  else
+                       {
+                            console.log("Enemy missed!",)
+                       }
+                }
+
+                 console.log("Player hull: " + target.hull,);
+
+            }
+    };
+
+    // Create enemy fleet
+    let enemyFleet = [];
+    for (let i = 0; i < ranNum(6, 13); i++)
+    {
+        enemy = new EnemyShip();
+        enemyFleet.push(enemy);
     }
-}
-console.log(spaceShip);
-console.log(enemyShip);
 
-// create enemy array
-let myspaceShip = new SpaceShipProperty()
-let enemyFleet = ["EnemyAlpha", "EnemyBeta", "EnemyGama", "EnemyDelta","EnemyOmega", "EnemyEta"];
+    
+alert("Battle is about to start!")
+console.log("Number of enemy ships " + enemyFleet.length),
 
-play = () => 
+setTimeout (() =>
 {
-    for(let i=0; i< enemyFleet.length; i++)
+    for (let i= 0; i < enemyFleet.length; i++)
     {
         let enemyShip = enemyFleet[i];
-        while (myspaceShip.hull > 0 && enemyShip.hull > 0)
+        while (myShip.hull > 0 && enemyShip.hull > 0)
         {
-            if(myspaceShip.hull > 0) 
+            if(myShip.hull > 0)
             {
-              myspaceShip.attack(alienShip);
-
+                myShip.attack(enemyShip);
+                let response = prompt ("Press OK to continue or TYPE retreat to end game.");
+                 if(response.toLowerCase() === "retreat")
+                    {
+                     myShip.retreat();
+                     alert("Please refresh to start a new game");
+                    //  alert("Press cancel and refresh the page!");
+                     break;
+                    }
             }
             if (enemyShip.hull > 0)
             {
-                enemyShip.attack (myspaceShip);
-            }
-            else
-            {
-                console.log("Enemy ship " + i + " caboom")
-            }
+             enemyShip.enemyAttack(myShip);
+            }     else
+               {
+                   console.log("Enemy ship" + i + " is destroyed!",);
+               }
         }
+    } 
+   // End of game ship status check
+    if(myShip.hull >= 0)
+   {
+        alert( "You won! Enemy fleet is destroyed");
+   }       else
+     {
+         alert("You died! Try again :(");
+     }
+}, 500);
 
-    }
-   
-}
-
-// The end recap
 
 
-    // class spaceShipStatus extends ship{
-    //     constructor (hull, firepower, accuracy){
-    //         this.hull = 6;
-    //         this.accuracy = .6;
-    //         this.alive = true;
-    //     }
-    // }
 
-    
-// check if ship is alive
-    // spaceShipStatus() 
-   
-    //     if (this.hull <= 0){
-    //         this.alive = false;}
-    //         else{console.log("You are alive! Keep shooting")
+
+
