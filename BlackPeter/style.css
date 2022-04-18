@@ -1,0 +1,44 @@
+.Container{
+    display: flex;
+    justify-content: space-between;
+    height: 100hv;
+    width: 100hv;
+    margin: 0 auto;
+    background-size:  100%;
+    background-color: yellowgreen;
+    color: black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Player{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Player1Image{
+    border: 1px black;
+    width: 30vw;
+    height: 40vw;
+    background-image: url("Mimi.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Player2Image{
+    
+        border: 1px black;
+        width: 30vw;
+        height: 40vw;
+        background-image: url("Kaka.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }

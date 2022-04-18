@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Black Peter</title>
+</head>
+
+<body>
+<h1>Black Peter</h1>
+<div class="Container">
+    <!-- player 1 -->
+    <div class="Player left">
+       <div class="Player1Image"></div>
+       <div class="Name:Mimi"></div>
+       <button id=" Draw card-player1" onclick="drawcard()">Take a card Mimi</button>
+    </div>
+   <!-- player 2 -->
+     <div class="Player right">
+          <div class="Player2Image"></div>
+          <div class="Name: Petya"></div>
+          <button id="Draw card-player2" onclick="drawcard()">Take a card Petya</button>
+    </div>
+    <!-- game id with buttons -->
+    <div id="Game">
+          <button id="StartOver" class="hidden" onclick="newGame()">Start New Game</button>
+   </div>
+    <!-- winner/looser -->
+    <div id="Winner"></div>
+</div>
+<script type = "text/javascript" src="BlackPeter.js"></script> 
+</body>
+</html>
