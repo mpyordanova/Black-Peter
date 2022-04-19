@@ -12,23 +12,70 @@
 <h1>Black Peter</h1>
 <div class="Container">
     <!-- player 1 -->
-    <div class="Player left">
-       <div class="Player1Image"></div>
-       <div class="Name:Mimi"></div>
-       <button id=" Draw card-player1" onclick="drawcard()">Take a card Mimi</button>
+    <div class="Player Mimi">
+        <p>Mimi</p>
+       <div class="PlayerMimiImage"></div>
+       <!-- <div class="Mimi-hand"></div> -->
+       <button id="Draw card-Mimi" onclick="drawcard()">Take a card</button>
+       <div id="Mimi-hand"></div>
     </div>
    <!-- player 2 -->
-     <div class="Player right">
-          <div class="Player2Image"></div>
-          <div class="Name: Petya"></div>
-          <button id="Draw card-player2" onclick="drawcard()">Take a card Petya</button>
+     <div class="Player Petya">
+         <p>Petya</p>
+          <div class="PlayerPetyaImage"></div>
+          <!-- <div class="Petya-hand"></div> -->
+          <button id="Draw card-Petya" onclick="drawcard()">Take a card</button>
+          <div id="Petya-hand"></div>
     </div>
     <!-- game id with buttons -->
     <div id="Game">
-          <button id="StartOver" class="hidden" onclick="newGame()">Start New Game</button>
+          <button id="StartOver" class="hidden" onclick="game()">Start New Game</button>
    </div>
     <!-- winner/looser -->
     <div id="Winner"></div>
+</div>
+<div class="CardContainer"> -->
+    <div id="score">
+        <h2 id="Mimi-deck"></h2>
+        <h2 id="Petya-deck"></h2>
+    </div>
+    <!-- <div class="Deck">  
+        <div class="blue">
+        <img class="back-face" src="#" alt="blue" ></div>
+        <div class="red">
+        <img class="back-face" src="#" alt="red"></div>
+        <div class="yellow">
+        <img class="back-face" src="#" alt="yellow"></div>
+        <div class="orange">
+        <img class="back-face" src="#" alt="orange"></div>
+        <div class="green">
+        <img class="back-face" src="#" alt="green"></div>
+        <div class="pink">
+        <img class="back-face" src="#" alt="pink"></div>
+        <div class="white">
+        <img class="back-face" src="#" alt="white"></div>
+        <div class="black">
+        <img class="back-face" src="#" alt="black"></div> 
+        <div class="purple">
+        <img class="back-face" src="#" alt="purple"></div>
+        <div class="blue">
+        <img class="back-face" src="#" alt="blue"></div>
+        <div class="yellow">
+        <img class="back-face" src="#" alt="yellow"></div>
+        <div class="orange">
+        <img class="back-face" src="#" alt="Car"></div>
+        <div class="green">
+        <img class="back-face" src="#" alt="Card5"></div>
+        <div class="purpule">
+        <img class="back-face" src="#" alt="Card6"></div>
+        <div class="white">
+        <img class="back-face" src="#" alt="Card7"></div>
+        <div class="red">
+        <img class="back-face" src="#" alt="Card8"></div>
+        <div class="pink">
+        <img class="back-face" src="#" alt="Card9"></div>
+
+    </div>   -->
 </div>
 <script type = "text/javascript" src="BlackPeter.js"></script> 
 </body>

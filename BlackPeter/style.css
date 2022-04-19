@@ -1,8 +1,18 @@
 .Container{
     display: flex;
     justify-content: space-between;
-    height: 100hv;
-    width: 100hv;
+    height: 300hv;
+    width: 200hv;
+    margin: 0 auto;
+    background-size:  100%;
+    background-color: yellowgreen;
+    color: black;
+}
+.CardContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 300hv;
+    width: 200hv;
     margin: 0 auto;
     background-size:  100%;
     background-color: yellowgreen;
@@ -22,21 +32,21 @@
     align-items: center;
 }
 
-.Player1Image{
+.PlayerMimiImage{
     border: 1px black;
-    width: 30vw;
-    height: 40vw;
+    width: 20vw;
+    height: 30vh;
     background-image: url("Mimi.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.Player2Image{
+.PlayerPetyaImage{
     
         border: 1px black;
-        width: 30vw;
-        height: 40vw;
+        width: 20vw;
+        height: 30vh;
         background-image: url("Kaka.png");
         background-size: cover;
         background-position: center;
