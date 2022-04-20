@@ -5,29 +5,25 @@ const drawBtn2 = document.getElementById("Draw card-Petya")
 const MimiPlay = document.getElementById("Mimi-hand")
 const PetyaPlay = document.getElementById("Petya-hand")
 
+document.addEventListener("click",game());
 
 
 
- class Card
-{ constructor(color){
-    // this.name = name;
-    this.color = color;
-    // this.image = image;
-}
-}
 
 // Create 3 arrays - one with all the cards and 2 for each player
-let cardsColors = ['red', 'orange', 'blue', 'green', 'purpule', 'yellow', 'white', 'pink', 'black','red', 'orange', 'blue', 'green', 'purpule', 'yellow', 'white', 'pink'];
+
 let cardsMimi = [];
 let cardsPetya = [];
+
 function game(){
+    let cardsColors = ['red', 'red', 'orange', 'blue', 'green', 'purpule', 'yellow', 'white', 'pink', 'black','red', 'orange', 'blue', 'green', 'purpule', 'yellow', 'white', 'pink'];
 for(let i=0; i < cardsColors.length; i++)
 {
     if(i % 2 === 0)
-    {cardsMimi.push(new Card(cardsColors[i]))}
+    {cardsMimi.push(cardsColors[i])}
     else
     {
-        cardsPetya.push(new Card(cardsColors[i]))
+        cardsPetya.push(cardsColors[i])
     }
 }
 
@@ -39,26 +35,37 @@ function MimiDraw(num){
     let ranNum = Math.floor(Math.random() * num);
     return ranNum;
 }
-document.getElementById("Draw card-Mimi").onclick = function()
+document.getElementById("Draw-card-Mimi").onclick = function()
 {
     // 8 or 9 cards. One player will have 9
-    let index = getRandom(8);
+    let index = getRandom(cardsPetya.length);
     let currentCard = cardsPetya[index];
-
+    cardsMimi.push(currentCard);
     // document.getElementById("Mimi-deck").innerHTML = "#" +  currentCard.image + currentCard.color
 
 };
 
-// / create function to check mathing cards
-function checkCard()
-{
-    let currentCard = cardsMimi[]
-    document.getElementById().innerHTML = cards.includes(currentCard);
-}
+// create new array without the duplicate cards. It does not fill the arrays with cards after it removes the duplicates!?
+function removeDuplicates(arr) {
+    let counts = arr.reduce(function(counts, item) {
+      counts[item] = (counts[item] || 0) + 1;
+      return counts;
+    }, {});
+    return Object.keys(counts).reduce(function(arr, item) {
+      if (counts[item] === 1) {
+        arr.push(item);
+      }
+      return arr;
+    }, []);
+  }
+  
+  let MimiUniqueArray = removeDuplicates(cardsMimi);
+  let PetyaUniqueArray = removeDuplicates(cardsPetya);
+   console.log(MimiUniqueArray)
+//   document.getElementById("Mimi-deck").textContent = JSON.stringify(newArr);
 
 
 
-// check if player has matchng card
 
 
 
@@ -74,7 +81,7 @@ function checkCard()
 // function winner (the person who matches his cards first)
 // function winner()
 // {
-//     if( )
+//    return  
 // }
 
 // display loser (the person with Black Peter card)
