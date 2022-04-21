@@ -1,13 +1,16 @@
 
 const newBtn = document.getElementById("StartOver")
-const drawBtn = document.getElementById("Draw card-Mimi")
-const drawBtn2 = document.getElementById("Draw card-Petya")
+const drawBtn = document.getElementById("DrawMimi")
+const drawBtn2 = document.getElementById("DrawPetya")
 const MimiPlay = document.getElementById("Mimi-hand")
 const PetyaPlay = document.getElementById("Petya-hand")
 
+// const MimiOpenCard = document.querySelector("Mimi-openCard")
 // Removed it because it runs the game function twice loads the arrays twice.
-// document.addEventListener("click",game);
- 
+newBtn.addEventListener("click",game);
+
+// MimiOpenCard.appendChild(cardsPetya[i])
+
 
 
 // Create 3 arrays - one with all the cards and 2 for each player
@@ -16,7 +19,8 @@ let cardsMimi = [];
 let cardsPetya = [];
 
 function game(){
-    let cardsColors = ['red', 'red', 'orange', 'orange', 'blue', 'green', 'purpule', 'yellow', 'white', 'pink', 'black','red', 'orange', 'blue', 'green', 'purpule', 'yellow', 'white', 'pink'];
+    let cardsColors = ['blue', 'red', 'yellow', 'orange', 'green', 'purple', 'white', 'pink', 'gold', 'silver', 'brown', 'black', 'blue', 'red', 'yellow', 'orange', 'green', 'purple', 'white', 'pink', 'gold', 'silver', 'brown'];
+    cardsColors.sort(() => Math.random() -0.5)
 for(let i=0; i < cardsColors.length; i++)
 {
     if(i % 2 === 0)
@@ -28,17 +32,21 @@ for(let i=0; i < cardsColors.length; i++)
         cardsPetya.push(cardsColors[i])
     }
 }
+newBtn.classList.toggle("hidden")
 
+cardsMimi = removeDuplicates(cardsMimi).result;
+cardsPetya = removeDuplicates(cardsPetya).result;
 console.log(cardsMimi);
 console.log(cardsPetya);
-let MimiUniqueArray = removeDuplicates(cardsMimi);
-let PetyaUniqueArray = removeDuplicates(cardsPetya);
- console.log(MimiUniqueArray);
- console.log(PetyaUniqueArray);
+// we treating this function as an object, bc the f returns an object.
+ 
+ displayCards(cardsMimi, "Mimi")
+ displayCards(cardsPetya, "Petya")
+ winner()
 }
 // removed cardsPetya from the end to test why it is giving me 2 rounds of cards!
-drawBtn.addEventListener("click",function(event){const result = draw(cardsMimi, cardsPetya)})
-drawBtn2.addEventListener("click",function(event){const result = draw(cardsPetya, cardsMimi)})
+drawBtn.addEventListener("click", drawMimi)
+drawBtn2.addEventListener("click", drawPetya)
 // create new array without the duplicate cards(they must go in a separate deck)
 function removeDuplicates(arr) 
 {
@@ -64,20 +72,47 @@ function removeDuplicates(arr)
                     });
 }
 
+
+
+function displayCards(displayArray, player)
+{ 
+  for(let i= 0; i < displayArray.length; i++){
+    
+  
+    let cardDiv = document.createElement("div")
+       cardDiv.textContent = displayArray[i]
+       cardDiv.classList.add('card')
+       if (player === "Mimi"){
+       MimiPlay.appendChild(cardDiv)}
+       else {PetyaPlay.appendChild(cardDiv)}
+       
+  }
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 // function Mimi draws card from Petya's array
 function drawMimi()
 {
     let ranCard = Math.floor(Math.random() * cardsPetya.length);
     let card = cardsPetya.splice(ranCard,1)
     cardsMimi.push(card)
-    const result = removeDuplicates(cardsMimi)
+    const result =removeDuplicates(cardsMimi)
     cardsMimi = result.result
+    removeAllChildNodes(MimiPlay)
+    displayCards(cardsMimi, "Mimi")
+    removeAllChildNodes(PetyaPlay)
+    displayCards(cardsPetya, "Petya")
     return card;
 }
-    console.log(draw(cardsPetya))
 
-    document.getElementById("Draw-card-Mimi").onclick = draw
-// draw not draw(), because if I have () it will envokes the function.
+
+    // document.getElementById("DrawMimi").onclick = drawMimi
+// draw, not draw(), because if I have () it will envokes the function.
 
 // function Petya draws card from Mimi's array
 function drawPetya()
@@ -87,42 +122,28 @@ function drawPetya()
     cardsPetya.push(card)
     const result = removeDuplicates(cardsPetya)
     cardsPetya = result.result
+    removeAllChildNodes(PetyaPlay)
+    displayCards(cardsPetya, "Petya")
+    removeAllChildNodes(MimiPlay)
+    displayCards(cardsMimi, "Mimi")
     return card;
 }  
-    console.log(draw(cardsMimi))
-
-    document.getElementById("Draw-card-Petya").onclick = draw
-
-
-
-  
- 
-//   document.getElementById("Mimi-deck").textContent = JSON.stringify(newArr);
-
-
-
-
-
-
-// function Petya draw card
-
-
-
-// check if player has matchng card
-
-
-
+     //We added line 125-128 to update the deck of cards for both players after each draw. If we don't do it it will leave one card on the player's deck.
 
 // function winner (the person who matches his cards first)
-// function winner()
-// {
-//    return  
-// }
+function winner()
+{
+    if(cardsMimi.length === 0 && cardsPetya.includes("black"))
+    {
+        alert('Mimi is winner!');
+    } 
+       else if(cardsPetya.length === 0 && cardsMimi.includes("black"))
+    { 
+        alert('Petya is winner!');
+    }
+}  
 
 // display loser (the person with Black Peter card)
-
-
-
 
 
 

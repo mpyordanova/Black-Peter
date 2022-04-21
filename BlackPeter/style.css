@@ -29,6 +29,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: .5rem;
 
 }
 
@@ -64,4 +66,8 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+    }
+
+    #button{
+        cursor: pointer;
     }
