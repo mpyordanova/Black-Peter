@@ -4,6 +4,7 @@ const drawBtn = document.getElementById("DrawMimi")
 const drawBtn2 = document.getElementById("DrawPetya")
 const MimiPlay = document.getElementById("Mimi-hand")
 const PetyaPlay = document.getElementById("Petya-hand")
+const resultDisplay = document.getElementById("result")
 
 // const MimiOpenCard = document.querySelector("Mimi-openCard")
 // Removed it because it runs the game function twice loads the arrays twice.
@@ -42,7 +43,7 @@ console.log(cardsPetya);
  
  displayCards(cardsMimi, "Mimi")
  displayCards(cardsPetya, "Petya")
- winner()
+
 }
 // removed cardsPetya from the end to test why it is giving me 2 rounds of cards!
 drawBtn.addEventListener("click", drawMimi)
@@ -107,6 +108,7 @@ function drawMimi()
     displayCards(cardsMimi, "Mimi")
     removeAllChildNodes(PetyaPlay)
     displayCards(cardsPetya, "Petya")
+    winner()
     return card;
 }
 
@@ -126,6 +128,7 @@ function drawPetya()
     displayCards(cardsPetya, "Petya")
     removeAllChildNodes(MimiPlay)
     displayCards(cardsMimi, "Mimi")
+    winner()
     return card;
 }  
      //We added line 125-128 to update the deck of cards for both players after each draw. If we don't do it it will leave one card on the player's deck.
@@ -134,16 +137,17 @@ function drawPetya()
 function winner()
 {
     if(cardsMimi.length === 0 && cardsPetya.includes("black"))
-    {
-        alert('Mimi is winner!');
+    {console.log("mimi")
+        resultDisplay.textContent = 'Mimi is winner!'
     } 
        else if(cardsPetya.length === 0 && cardsMimi.includes("black"))
-    { 
-        alert('Petya is winner!');
-    }
+    { console.log("petya")
+         resultDisplay.textContent = "Petya is winner!"
+    }else 
+    {resultDisplay.textContent = "result" }
 }  
 
-// display loser (the person with Black Peter card)
+
 
 
 
