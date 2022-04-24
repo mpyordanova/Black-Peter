@@ -70,7 +70,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border: 10px solid #ddd;
+    border: 10px solid rgb(151, 146, 146);
     border-radius: 7px;
     padding: 5px;
 }
@@ -83,7 +83,7 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        border: 10px solid #ddd;
+        border: 10px solid rgb(151, 146, 146);
         border-radius: 7px;
         padding: 5px;
         
@@ -119,15 +119,17 @@
         transition: all 0.2s;
        
     }
+
+    .Button:hover{
+        border-color: rgb(255, 255, 255);
+    }
+
     #Game{
         display: flex;
         justify-content: space-around;
         align-items: center;
     }
-    .Button:hover{
-        border-color: rgb(255, 255, 255);
-    }
-
+   
    h1{
        display: flex;
     font-family: cursive;
@@ -138,9 +140,25 @@
    }
    .p{
     font-family: cursive;
-    
-    font-size: xx-large;
-
-   
+    font-size: xx-large; 
    }
-  
+.collapsible{
+  background-color: rgb(151, 146, 146);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  .rules {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }

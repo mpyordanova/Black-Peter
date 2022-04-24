@@ -146,8 +146,17 @@ function winner()
 //the final else {resultDisplay.textContent="result"} we put in {} so it diplays the final winner after the game is over. 
 // DO NOT use innerHTML. Instead use textContent!
 
-
-
+  let collapse = document.querySelector(".collapsible");
+  let i;
+  collapse.addEventListener("click", function() {
+     this.classList.toggle("active");
+     let rules = this.nextElementSibling;
+     if (rules.style.display === "block") {
+        rules.style.display = "none";
+     } else {
+        rules.style.display = "block";
+     }
+  });
 
 
 
