@@ -134,7 +134,7 @@ function drawPetya()
 function winner()
 {
     if(cardsMimi.length === 0 && cardsPetya.includes("black"))
-    {console.log("mimi")
+    {
         resultDisplay.textContent = 'Mimi wins!'
     } 
        else if(cardsPetya.length === 0 && cardsMimi.includes("black"))
@@ -158,6 +158,14 @@ function winner()
      }
   });
 
-
-
+// RELOAD THE GAME BUTTON
+document.getElementById("reload").addEventListener("click", function() {
+    location.reload();
+    return false;
+});
+// DISABLE BUTTON PLAY AFTER ITS CLICKED ONE TME.
+document.getElementById("StartOver").onclick = function() {
+    //disable
+    this.disabled = true;
+}
 
