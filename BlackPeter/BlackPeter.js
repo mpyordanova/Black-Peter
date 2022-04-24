@@ -1,20 +1,12 @@
 
 const newBtn = document.getElementById("StartOver")
+
 const drawBtn = document.getElementById("DrawMimi")
 const drawBtn2 = document.getElementById("DrawPetya")
 const MimiPlay = document.getElementById("Mimi-hand")
 const PetyaPlay = document.getElementById("Petya-hand")
 const resultDisplay = document.getElementById("result")
-
-// const MimiOpenCard = document.querySelector("Mimi-openCard")
-// Removed it because it runs the game function twice loads the arrays twice.
 newBtn.addEventListener("click",game);
-
-// MimiOpenCard.appendChild(cardsPetya[i])
-
-
-
-// Create 3 arrays - one with all the cards and 2 for each player
 
 let cardsMimi = [];
 let cardsPetya = [];
@@ -82,6 +74,10 @@ function displayCards(displayArray, player)
   
     let cardDiv = document.createElement("div")
        cardDiv.textContent = displayArray[i]
+    //    to dislay the cards with different colors
+       cardDiv.style.backgroundColor = displayArray[i]
+    //  classList.add("CardContainer")
+    //    style that class in css to add color .style! set the style to the name of colors flexbox. style the cards in container with fb
        cardDiv.classList.add('card')
        if (player === "Mimi"){
        MimiPlay.appendChild(cardDiv)}
@@ -89,6 +85,7 @@ function displayCards(displayArray, player)
        
   }
 }
+    //  classList.add("CardContainer")
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
@@ -138,14 +135,17 @@ function winner()
 {
     if(cardsMimi.length === 0 && cardsPetya.includes("black"))
     {console.log("mimi")
-        resultDisplay.textContent = 'Mimi is winner!'
+        resultDisplay.textContent = 'Mimi wins!'
     } 
        else if(cardsPetya.length === 0 && cardsMimi.includes("black"))
     { console.log("petya")
-         resultDisplay.textContent = "Petya is winner!"
+         resultDisplay.textContent = "Petya wins!"
     }else 
     {resultDisplay.textContent = "result" }
 }  
+//the final else {resultDisplay.textContent="result"} we put in {} so it diplays the final winner after the game is over. 
+// DO NOT use innerHTML. Instead use textContent!
+
 
 
 

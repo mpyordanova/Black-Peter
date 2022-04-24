@@ -3,40 +3,55 @@
     justify-content: space-between;
     height: 300hv;
     width: 200hv;
-    background-color: yellowgreen;
     margin: 0 auto;
     background-size:  100%;
-      color: black;
+    font-size: xx-large;
+    font-family: cursive;
+    color: aliceblue;
 }
+
 .CardContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+    flex-direction: row;
+    margin: auto;
     height: 300hv;
-    width: 200hv;
-    background-color: yellowgreen;
-    margin: 0 auto;
-    background-size:  100%;
+    width: 80%;
+    /* background-color: yellow; */
       color: black;
+     
 }
 
-.Mimi-deck, .Petya-deck{
-    display:none;
-    display: block;
-    border: 1px black;
-    width: 15vw;
-    height: 20vh;
-    background-image: url("PlayCard.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    border-radius: .5rem;
+#Mimi-hand{
+    display: flex;
+    float:left;
+    margin: 20px;
+    width: 200px;
+    height:180px;
+    
 
 }
 
-*{
-    margin: 0;
-    padding: 0;
+#Petya-hand{
+    display: flex;
+    float:right;
+    margin: 20px;
+    width: 200px;
+    height:180px;
+       
+}
+
+#result{
+    display: flex;
+    float:center;
+    margin: 20px;
+    width: 100px;
+    height:200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center ;
+    font-family: cursive;
+      
 }
 
 .Player{
@@ -48,26 +63,84 @@
 }
 
 .PlayerMimiImage{
-    border: 1px black;
+  
     width: 20vw;
     height: 30vh;
     background-image: url("Mimi.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    border: 10px solid #ddd;
+    border-radius: 7px;
+    padding: 5px;
 }
 
 .PlayerPetyaImage{
     
-        border: 1px black;
         width: 20vw;
         height: 30vh;
         background-image: url("Kaka.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        border: 10px solid #ddd;
+        border-radius: 7px;
+        padding: 5px;
+        
     }
 
     #button{
         cursor: pointer;
     }
+
+    
+    body {
+        margin: 0;
+        background: radial-gradient(rgb(202, 255, 96), rgb(50, 75, 1) );
+    }
+    html {
+        min-height: 100vh;
+    }
+
+    .Button{
+        display: flex;
+        padding: 0.5em 1.7em;
+        margin: 0 0.1em 0.1em 0;
+        border: 0.16em solid rgba(255, 255, 255, 0);
+        background-color: rgb(209, 31, 22);
+        border-radius: 2em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: cursive;
+        font-weight: 300;
+        color: #ffffff;
+        text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+        text-align: center;
+        transition: all 0.2s;
+       
+    }
+    #Game{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .Button:hover{
+        border-color: rgb(255, 255, 255);
+    }
+
+   h1{
+       display: flex;
+    font-family: cursive;
+    color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    
+   }
+   .p{
+    font-family: cursive;
+    
+    font-size: xx-large;
+
+   
+   }
+  

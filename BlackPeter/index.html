@@ -9,38 +9,34 @@
 </head>
 
 <body>
-<h1>Black Peter</h1>
+<h1><strong>Matching Cards</strong></h1>
+ <!-- game id with buttons -->
+ <div id="Game">
+   
+    <button id="StartOver" class="Button">Start New Game</button>
+</div>
 <div class="Container">
     <!-- player 1 -->
     <div class="Player Mimi">
-        <p>Mimi</p>
-       <div class="PlayerMimiImage"></div>
-       <!-- <div class="Mimi-hand"></div> -->
-       <button id="DrawMimi">Take a card</button>
-      
-    </div>
+        <p><strong>Mimi</strong></p>
+       <div class="PlayerMimiImage"></div><br>
+       <button id="DrawMimi" class="Button">Take a card</button>
+     </div>
+     <div id = "result"></div>
    <!-- player 2 -->
      <div class="Player Petya">
-         <p>Petya</p>
-          <div class="PlayerPetyaImage"></div>
-          <!-- <div class="Petya-hand"></div> -->
-          <button id="DrawPetya">Take a card</button>
+        <p><strong>Petya</strong></p>
+          <div class="PlayerPetyaImage"></div><br>
+          <button id="DrawPetya" class="Button">Take a card</button>
           
     </div>
-    <!-- game id with buttons -->
-    <div id="Game">
-          <button id="StartOver" class="hidden">Start New Game</button>
-   </div>
-    <!-- winner/looser -->
-    <div id="Winner"></div>
-    <div class="text"></div>
-</div>
+   
+</div><br><br><br><br><br>
 <div class="CardContainer"> 
          <div id ="Mimi-hand"></div>
-         <div id = "result">Winner</div>
-        <div id ="Petya-hand"></div>
-        
-   
+         <div id ="Petya-hand"></div>
+        <!--  class to each of the color divs -->
+    
     <!-- <div class="Deck">  
         <div class="blue">
         <img class="back-face" src="#" alt="blue" ></div>
