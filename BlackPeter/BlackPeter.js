@@ -169,3 +169,8 @@ document.getElementById("StartOver").onclick = function() {
     this.disabled = true;
 }
 
+function scrollRules()
+{
+const element= document.getElementsByClassName("collapsible");
+element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+}
