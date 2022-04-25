@@ -74,6 +74,9 @@
     border-radius: 7px;
     padding: 5px;
 }
+.PlayerMimiImage:hover{
+    background-image: url("MimiSmile.png");
+}
 
 .PlayerPetyaImage{
     
@@ -87,6 +90,10 @@
         border-radius: 7px;
         padding: 5px;
         
+    }
+
+    .PlayerPetyaImage:hover{
+        background-image: url("PetyaSmile.png");
     }
 
     
